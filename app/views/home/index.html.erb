@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Welcome to DIREWOLF Job Portal !!</h1>
+
+<li><%= link_to "ADMIN LOGIN", new_admin_session_path, :method => :get %></li>
+<li><%= link_to "EMPLOYER LOGIN", new_employersession_path , :method => :get %></li>
+<li><%= link_to "JOB SEEKER LOGIN", new_session_path , :method => :get %></li>
+
+<li><%= link_to "Search Publically visible Jobs", searchPublic_path , :method => :get %></li>
+
+</body>
+</html>

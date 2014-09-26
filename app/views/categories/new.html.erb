@@ -1,0 +1,16 @@
+<h1>Add a Category</h1>
+
+<%= form_for(@category) do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <div class="field">
+      <%= f.label :category %><br />
+      <%= f.text_field :category %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Add a Category" %>
+    </div>
+<% end %>
+
+<br/>
+<li><%= link_to "Back To Home Page", session[:admin], :method => :get %></li>
+

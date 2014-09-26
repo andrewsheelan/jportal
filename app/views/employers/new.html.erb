@@ -1,0 +1,30 @@
+<h1>Add an Employer</h1>
+
+<%= form_for(@employer) do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <div class="field">
+      <%= f.label :emp_name %><br />
+      <%= f.text_field :emp_name %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :contact_person %><br />
+      <%= f.text_field :contact_person %>
+    </div>
+    <div>
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+    <div>
+      <%= f.label :password_confirmation, "Confirmation" %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Add an Employer" %>
+    </div>
+<% end %>
+
+<li><%= link_to "Admin Home Page", session[:admin], method: :get %></li>

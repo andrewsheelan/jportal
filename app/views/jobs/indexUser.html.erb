@@ -1,0 +1,17 @@
+<h1>All Jobs Posted</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <% @jobs.each do |job| %>
+      <li>
+        <%= job.emp_name%>
+        </br>
+        <%= job.job_ID%>
+        <p>Apply for this Job!!!</p>
+      </li>
+  <% end %>
+</ul>
+
+
+<%= will_paginate %>

@@ -1,0 +1,27 @@
+<table>
+      <h1>
+        <%= @user.name %>
+      </h1>
+  <tr>
+    <td>
+      <strong>Name</strong> <%= @user.name %><br />
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Phone No.:</strong> <%= @user.phone_no %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Skills:</strong> <%= @user.skills %>
+    </td>
+  </tr>
+</table>
+<br/>
+
+<li><%= link_to "Search For Jobs", searchForm_path, :method => :get %></li>
+<li><%= link_to "Edit Profile", "/users/#{@user.id}/edit", :method => :get %></li>
+<li><%= link_to "List of Jobs You Have Applied: ", jobapplications_path %></li>
+<li><%= link_to "Sign out", signout_path, :method => :delete %></li>

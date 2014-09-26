@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="848912344">
+    <data-source source="LOCAL" name="Rails jobPortal: development" uuid="169bf64d-cb92-4d85-bfa0-ff9f2521172f">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Saumil Gandhi\Documents\RailsApp\untilDeleteEmployer\jobPortalTrial\db\development.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails jobPortal: test" uuid="479f53a6-de50-4cd1-9c8d-c0516639a4bf">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Saumil Gandhi\Documents\RailsApp\untilDeleteEmployer\jobPortalTrial\db\test.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

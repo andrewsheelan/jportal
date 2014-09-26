@@ -1,0 +1,18 @@
+<h1>All Jobs Posted</h1>
+
+
+<ul class="users">
+  <% @employer.each do |emp| %>
+      <br/>
+      <li>
+        <Strong>Employer : </Strong><%= emp.emp_name%>
+        </br>
+        <br/>
+        <%= link_to "Delete This Employer", emp, :method => :delete, :confirm => "You sure?",
+                    :title => "Delete #{emp.emp_name}" %>
+      </li>
+  <% end %>
+</ul>
+
+<li><%= link_to "Admin Home Page", session[:admin], :method => :get %></li>
+

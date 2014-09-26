@@ -1,0 +1,42 @@
+<h1>Sign up</h1>
+
+<%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <div>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :phone_no %><br />
+      <%= f.text_field :phone_no %>
+    </div>
+    <div class="field">
+      <%= f.label :skills %><br />
+      <%= f.text_field :skills %>
+    </div>
+    <div class="field">
+      <%= f.label :resume %><br />
+      <%= f.text_area :resume %>
+    </div>
+    <div class="field">
+      <%= f.label :coverLetter%><br />
+      <%= f.text_area :coverLetter %>
+    </div>
+    <div>
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+    <div>
+      <%= f.label :password_confirmation, "Confirmation" %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div>
+      <%= f.submit "Sign up" %>
+    </div>
+<% end %>
+<br/>
+<li><%= link_to "Back To Sign In", root_path, :method => :get %></li>

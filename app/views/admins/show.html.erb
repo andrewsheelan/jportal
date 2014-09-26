@@ -1,0 +1,13 @@
+<h1>
+  Hello Admin:
+  <%= @admin.name %><br/></h1>
+  Email id:<%=@admin.email  %><br/>
+
+  <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+  <li><%= link_to "Edit password", edit_admin_path %></li>
+  <li><%= link_to "Add Admin", new_admin_path %></li>
+  <li><%= link_to "Add Category", new_category_path %></li>
+  <li><%= link_to "Add Employer", new_employer_path %></li>
+  <li><%= link_to "List Employer", employers_path %></li>
+
+

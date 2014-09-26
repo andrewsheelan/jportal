@@ -1,0 +1,16 @@
+
+<% @job.each do |r| %>
+    <table>
+      <tr>
+        <td><strong>Company Name : </strong><%= r.emp_name %></td></tr>
+      <tr> <td><strong>Job Title : </strong><%= r.title%></td></tr>
+
+      <tr> <td><strong>Job ID : </strong><%= r.job_ID%></td>
+      </tr>
+    </table>
+
+    <br/>
+
+<% end%>
+
+<li><%= link_to "SignIn to Apply!!!", new_session_path, :method => :get %></li>

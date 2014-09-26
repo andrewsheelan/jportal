@@ -1,0 +1,15 @@
+<h1>Edit the Status of Application</h1>
+
+<%= form_for(@jobapplication) do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <div class="field">
+      <%= f.label :status %><br />
+      <%= f.text_field :status %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Update Status" %>
+    </div>
+<% end %>
+
+<br/>
+<li><%= link_to "Back To View Page", session[:empView], :method => :get %></li>

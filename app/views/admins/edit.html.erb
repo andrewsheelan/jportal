@@ -1,0 +1,22 @@
+<h1>Edit Admin</h1>
+
+<%= form_for(@admin) do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+
+
+
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "Confirmation" %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+<% end %>
+
+<li><%= link_to "Admin Home Page", :back, method: :get %></li>

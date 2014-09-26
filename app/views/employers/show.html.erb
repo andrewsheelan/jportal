@@ -1,0 +1,15 @@
+<h1>
+  Welcome, <%=@employer.emp_name %>
+</h1>
+
+<strong>Contact Person :</strong><%=@employer.contact_person %>
+<br/>
+<strong>Email :</strong><%=@employer.email %>
+<br/>
+<br/>
+<li><%= link_to "Change Password", edit_employer_path, :method => :get %></li>
+<li><%= link_to "Post Jobs", new_job_path, :method => :get %></li>
+<li><%= link_to "View Jobs", jobs_path, :method => :get %></li>
+<li><%= link_to "View Job Applications", viewJobApplicants_path, :method => :get %></li>
+<li><%= link_to "View Categories", categories_path, :method => :get %></li>
+<li><%= link_to "Sign out", employersession_path, :method => :delete %></li>

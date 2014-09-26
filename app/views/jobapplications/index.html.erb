@@ -1,0 +1,21 @@
+<h1>All Jobs Applied</h1>
+
+
+
+<ul class="users">
+  <% @jobapplications.each do |jobapplication| %>
+      <li>
+        <%= jobapplication.emp_name%>
+        </br>
+        <%= jobapplication.job_ID%>
+        </br>
+        <%= jobapplication.status%>
+        <br/>
+        <%= link_to "Delete This Job", jobapplication, :method => :delete, :confirm => "You sure?",
+                    :title => "Delete #{jobapplication.job_ID} of #{jobapplication.emp_name}" %>
+      </li>
+  <% end %>
+</ul>
+</br>
+<li><%= link_to "Back To Home Page", session[:userHP], :method => :get %></li>
+

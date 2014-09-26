@@ -1,0 +1,16 @@
+<%= form_tag({:controller => 'jobs', :action => 'searchPublic'}, {:method => 'get'})  do |s| %>
+    <%= text_field_tag :keyword, params[:keyword] %>
+    <br/>
+    <%= check_box_tag(:one) %>
+    <%= label_tag(:one,"Employee") %>
+    <%= check_box_tag(:two) %>
+    <%= label_tag(:two,"Job Title") %>
+    <%= check_box_tag(:three) %>
+    <%= label_tag(:three,"Job Tags") %>
+
+    <%= submit_tag "Search" %>
+<% end %>
+
+
+</br>
+<li><%= link_to "Home Page", root_path, :method => :get %></li>

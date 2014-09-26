@@ -1,0 +1,19 @@
+<h1>All Jobs Applications Recieved For Your Company</h1>
+
+<ul class="users">
+  <% @jobapplications.each do |jobapplication| %>
+      <li>
+        <strong>Company :</strong><%= jobapplication.emp_name%>
+        </br>
+        <strong>Job ID :</strong><%= jobapplication.job_ID%>
+        </br>
+        <strong>Job Seeker :</strong><%= jobapplication.email%>
+        </br>
+        <strong>Status :</strong><%= jobapplication.status%>
+        </li>
+        <%= link_to "Edit Status", "/jobapplications/#{jobapplication.id}/edit", :method => :get %>
+  <% end %>
+</ul>
+
+<br/>
+<li><%= link_to "Back To Home Page", session[:employer], :method => :get %></li>
