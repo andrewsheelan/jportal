@@ -1,7 +1,19 @@
-<table>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+
+<div id="wrap">
+  <div id="header">
       <h1>
         <%= @user.name %>
       </h1>
+</div>
+  <div id="sidebar">
+
+  <table>
   <tr>
     <td>
       <strong>Name</strong> <%= @user.name %><br />
@@ -20,8 +32,14 @@
   </tr>
 </table>
 <br/>
-
+  </div>
+<div id="nav">
 <li><%= link_to "Search For Jobs", searchForm_path, :method => :get %></li>
 <li><%= link_to "Edit Profile", "/users/#{@user.id}/edit", :method => :get %></li>
 <li><%= link_to "List of Jobs You Have Applied: ", jobapplications_path %></li>
+<li><%= link_to "Recommended Jobs ", recommed_path ,:method=>:get %></li>
 <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+  </div>
+</div>
+</body>
+</html>

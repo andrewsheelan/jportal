@@ -1,7 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
 <h1>All Jobs Posted</h1>
+    </div>
 
 <%= will_paginate %>
-
+  <div id="sidebar">
 <ul class="users">
   <% @jobs.each do |job| %>
       <li>
@@ -12,6 +21,10 @@
       </li>
   <% end %>
 </ul>
+    </div>
+  </div>
 
 
 <%= will_paginate %>
+</body>
+</html>

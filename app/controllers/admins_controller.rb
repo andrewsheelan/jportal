@@ -12,7 +12,7 @@ class AdminsController < ApplicationController
     @admin = Admin.new(admin_params)
     if @admin.save
      # sign_in @admin
-      flash[:success] = "Successfully signed up!"
+      flash[:success] = "Successfully Registered an Admin!"
      # @admin = Admin.find(params[:id])
       redirect_to session[:admin]
       #redirect_to (:back)

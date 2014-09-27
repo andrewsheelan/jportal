@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<div id=wrap">
+<% @jobs.each do |r| %>
+    <table>
+      <tr>
+        <td><strong>Company Name : </strong><%= r.emp_name %></td></tr>
+      <tr> <td><strong>Job Title : </strong><%= r.title%></td></tr>
+
+      <tr> <td><strong>Job ID : </strong><%= r.job_ID%></td>
+      </tr>
+    </table>
+
+    <br/>
+<div id="nav">
+    <li><%= link_to "Apply for this Job", new_jobapplication_path, :method => :get %></li>
+<% end%>
+
+<li><%= link_to "Back To Home Page", session[:userHP], :method => :get %></li>
+</div>
+</div>
+</body>
+</html>

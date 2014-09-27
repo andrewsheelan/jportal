@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926061637) do
+ActiveRecord::Schema.define(version: 20140926231325) do
 
   create_table "admins", force: true do |t|
     t.string   "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140926061637) do
     t.string   "emp_name"
     t.string   "email"
     t.string   "status"
+    t.string   "tags"
   end
 
   create_table "jobs", force: true do |t|
@@ -57,9 +58,9 @@ ActiveRecord::Schema.define(version: 20140926061637) do
     t.string   "tags"
     t.datetime "deadline"
     t.string   "category"
+    t.string   "public"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "public"
   end
 
   create_table "users", force: true do |t|

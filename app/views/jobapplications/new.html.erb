@@ -1,5 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
 <h1>Apply for the Job</h1>
-
+    </div>
+<div id="sidebar">
 <%= form_for(@jobapplication) do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
     <div class="field">
@@ -14,11 +23,21 @@
       <%= f.label :emp_name %><br />
       <%= f.text_field :emp_name %>
     </div>
+    <div class="field">
+      <%= f.label :tags %>For eg. Intern/Full Time<br />
+      <%= f.text_field :tags %>
+    </div>
 
     <div class="actions">
       <%= f.submit "Apply" %>
     </div>
 <% end %>
-
+</div>
 </br>
+<div id=nav">
 <li><%= link_to "Back To Search Page", session[:searchURL], :method => :get %></li>
+</div>
+    </div>
+
+</body>
+</html>

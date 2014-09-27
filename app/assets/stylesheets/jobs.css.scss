@@ -1,3 +1,58 @@
-// Place all the styles related to the Jobs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body
+{
+  margin:0;
+  padding:0;
+  color:#000;
+  background-color:#B00100;
+}
+
+#wrap {
+  width:750px;
+  margin:0 auto;
+  background:#99c;
+}
+#nav ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+#nav li {
+  display:inline;
+  margin:0;
+  padding:0;
+}
+
+#header {
+  padding:5px 10px;
+  background:#ddd;
+}
+h1 {
+  margin:0;
+}
+#nav {
+  padding:5px 10px;
+  background:#c99;
+}
+#main {
+  float:left;
+  width:480px;
+  padding:10px;
+  background:#9c9;
+}
+h2 {
+  margin:0 0 1em;
+}
+#sidebar {
+  float:right;
+  width:730px;
+  padding:10px;
+  background:#99c;
+}
+#footer {
+  clear:both;
+  padding:5px 10px;
+  background:#cc9;
+}
+#footer p {
+  margin:0;
+}

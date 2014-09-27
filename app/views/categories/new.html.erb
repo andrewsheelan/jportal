@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
 <h1>Add a Category</h1>
+</div>
 
 <%= form_for(@category) do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
@@ -12,5 +21,9 @@
 <% end %>
 
 <br/>
+  <div id="nav">
 <li><%= link_to "Back To Home Page", session[:admin], :method => :get %></li>
-
+</div>
+    </div>
+</body>
+</html>

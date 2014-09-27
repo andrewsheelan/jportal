@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   match '/admin/signout' => 'admin_sessions#destroy', via: :delete
   match '/searchPublic' => 'jobs#searchFormPublic', via: :get
   match '/searchPublicJobs' => 'jobs#searchPublic', via: :get
+  match '/recommed'=>'jobs#recommend',via: :get
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

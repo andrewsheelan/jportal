@@ -1,5 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
 <h1>Post a Job</h1>
-
+</div>
 <%= form_for(@job) do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
     <div class="field">
@@ -19,7 +27,7 @@
       <%= f.text_area :description %>
     </div>
     <div class="field">
-      <%= f.label :tags %><br />
+      <%= f.label :tags %>(eg: Intern, Full Time)<br />
       <%= f.text_field :tags %>
     </div>
     <div class="field">
@@ -31,16 +39,19 @@
       <%= f.text_field :category %>
     </div>
     <div class="field">
-      <%= f.label :public %><br />
+      <%= f.label :public %>(eg: 1 for Public and 0 for Private)<br />
       <%= f.text_field :public %>
     </div>
     <div class="actions">
       <%= f.submit "Post a Job" %>
     </div>
 <% end %>
-
+<div id = "nav">
 <br/>
 <li><%= link_to "Back To Home Page", session[:employer], :method => :get %></li>
 <br/>
 <li><%= link_to "View Available Categories", categories_path, :method => :get %></li>
-
+</div>
+</div>
+</body>
+</html>

@@ -1,5 +1,14 @@
-<h1>Edit Admin</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
 
+<div id="wrap">
+  <div id="header">
+<h1>Edit Admin</h1></div>
+<div id="sidebar">
 <%= form_for(@admin) do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
 
@@ -18,5 +27,9 @@
       <%= f.submit "Update" %>
     </div>
 <% end %>
-
-<li><%= link_to "Admin Home Page", :back, method: :get %></li>
+</div>
+<div id="nav">
+  <li><%= link_to "Admin Home Page", :back, method: :get %></li></div>
+    </div>
+</body>
+</html>

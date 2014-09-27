@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<div id="wrap">
+
 <%= form_tag({:controller => 'jobs', :action => 'search'}, {:method => 'get'})  do |s| %>
     <%= text_field_tag :keyword, params[:keyword] %>
     <br/>
@@ -13,4 +21,9 @@
 
 
 </br>
+  <div id="nav">
 <li><%= link_to "Back To Home Page", session[:userHP], :method => :get %></li>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-class AddColumnsToJobs < ActiveRecord::Migration
+class UpdateToJobs < ActiveRecord::Migration
   def change
     create_table :jobs do |t|
       t.string :job_ID
@@ -8,7 +8,9 @@ class AddColumnsToJobs < ActiveRecord::Migration
       t.string :tags
       t.timestamp :deadline
       t.string :category
+      t.string :public
 
       t.timestamps
-    end  end
+    end
+  end
 end

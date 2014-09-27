@@ -1,5 +1,13 @@
-<h1>Sign in For Job Seeker</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
 
+<div id="wrap">
+  <div id="header"><h1>Sign in For Job Seeker</h1></div>
+<div id = "sidebar">
 <%= form_for(:session, :url => sessions_path) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
@@ -13,5 +21,10 @@
       <%= f.submit "Sign in" %>
     </div>
 <% end %>
-
+</div>
+<div id = "nav">
 <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+</div>
+</div>
+</body>
+</html>

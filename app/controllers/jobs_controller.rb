@@ -31,6 +31,15 @@ class JobsController < ApplicationController
     session[:searchURL] = request.original_url
     #@job = Job.where({:emp_name => params[:search][:emp_name]}).all
   end
+  def recommend
+    Jobapplication.all.each do|user|
+      if user.email==session[:userEmail]
+        @content=user.tags
+      end
+    end
+  @jobs=Job.where('deadline > ?',DateTime.now).where('tags=?',@content)
+  end
+
 
   def searchFormPublic
     @job = Job.new

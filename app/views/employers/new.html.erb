@@ -1,5 +1,13 @@
-<h1>Add an Employer</h1>
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
+<h1>Add an Employer</h1></div>
+<div id="sidebar">
 <%= form_for(@employer) do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
     <div class="field">
@@ -26,5 +34,10 @@
       <%= f.submit "Add an Employer" %>
     </div>
 <% end %>
+</div>
 
-<li><%= link_to "Admin Home Page", session[:admin], method: :get %></li>
+  <div id="nav">
+<li><%= link_to "Admin Home Page", session[:admin], method: :get %></li></div>
+</div>
+</body>
+</html>

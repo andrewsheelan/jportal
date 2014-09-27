@@ -1,5 +1,15 @@
-<h1>Sign up</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
 
+<div id="wrap">
+  <div id="header">
+
+<h1>Sign up</h1></div>
+<div id="sidebar">
 <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
     <div>
@@ -38,5 +48,10 @@
       <%= f.submit "Sign up" %>
     </div>
 <% end %>
+</div>
 <br/>
-<li><%= link_to "Back To Sign In", root_path, :method => :get %></li>
+  <div id="nav">
+<li><%= link_to "Back To Sign In", root_path, :method => :get %></li></div>
+    </div>
+</body>
+</html>

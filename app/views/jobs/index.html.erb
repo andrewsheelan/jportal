@@ -1,5 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
 <h1>All Jobs Posted</h1>
-
+    </div>
+<div id="sidebar">
 
 <ul class="users">
   <% @jobs.each do |job| %>
@@ -19,6 +28,10 @@
       </li>
   <% end %>
 </ul>
-
+  </div>
+<div id="nav">
 <li><%= link_to "Back Home Page", session[:employer], :method => :get %></li>
-
+</div>
+    </div>
+</body>
+</html>

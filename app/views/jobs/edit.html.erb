@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
 <h1>Edit Job</h1>
+    </div>
 
 <%= form_for(@job) do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
@@ -39,4 +48,9 @@
     </div>
 <% end %>
 <br/>
+<div id="nav">
 <li><%= link_to "Back To View Jobs", session[:empUser], :method => :get %></li>
+</div>
+    </div>
+</body>
+</html>
