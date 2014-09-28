@@ -5,21 +5,22 @@
 </head>
 <body>
 <div id=wrap">
-<% @jobs.each do |r| %>
-    <table>
-      <tr>
-        <td><strong>Company Name : </strong><%= r.emp_name %></td></tr>
-      <tr> <td><strong>Job Title : </strong><%= r.title%></td></tr>
+  <div id="header"><h1>Recommended Jobs For you !!!</h1></div>
+  <div id="sidebar">
+   <% @jobs.each do |r| %>
 
-      <tr> <td><strong>Job ID : </strong><%= r.job_ID%></td>
-      </tr>
-    </table>
+
+     <li><strong>Company Name : </strong><%= r.emp_name %>
+     <strong>Job Title : </strong><%= r.title%>
+
+      <strong>Job ID : </strong><%= r.job_ID%>
+      </li>
 
     <br/>
-<div id="nav">
-    <li><%= link_to "Apply for this Job", new_jobapplication_path, :method => :get %></li>
+<li><%= link_to "Apply for this Job", new_jobapplication_path, :method => :get %></li>
 <% end%>
-
+</div>
+<div id="nav">
 <li><%= link_to "Back To Home Page", session[:userHP], :method => :get %></li>
 </div>
 </div>

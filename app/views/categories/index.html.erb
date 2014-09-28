@@ -1,5 +1,15 @@
-<h1>All Job Categories</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
 
+
+  <h1>All Job Categories</h1></div>
+<div id="sidebar">
 <table>
   <thead>
     <tr>
@@ -10,12 +20,16 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%=category.category %></td>
+        <td><li><%=category.category %></li></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
-
+<div id="nav">
 <%= link_to 'Post a Job', new_job_path %>
+</div>
+    </div>
+</body>
+</html>
