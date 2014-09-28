@@ -9,25 +9,26 @@
 <h1>All Jobs Applied</h1>
 </div>
 
-
+<div id="sidebar">
 <ul class="users">
   <% @jobapplications.each do |jobapplication| %>
       <li>
-        <%= jobapplication.emp_name%>
+        <strong>Company Name:</strong><%= jobapplication.emp_name%>
         </br>
-        <%= jobapplication.job_ID%>
+        <strong>Job ID:</strong><%= jobapplication.job_ID%>
         </br>
-        <%= jobapplication.status%>
+        <strong>Status of Application:</strong><%= jobapplication.status%>
         <br/>
         <%= link_to "Delete This Job", jobapplication, :method => :delete, :confirm => "You sure?",
                     :title => "Delete #{jobapplication.job_ID} of #{jobapplication.emp_name}" %>
       </li>
   <% end %>
 </ul>
+</div>
 </br>
 <div id="nav">
 <li><%= link_to "Back To Home Page", session[:userHP], :method => :get %></li>
 </div>
-    </div>
+</div>
 </body>
 </html>

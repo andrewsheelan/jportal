@@ -32,14 +32,16 @@
   </tr>
 </table>
 <br/>
-  </div>
+</div>
 <div id="nav">
+<ul>
 <li><%= link_to "Search For Jobs", searchForm_path, :method => :get %></li>
 <li><%= link_to "Edit Profile", "/users/#{@user.id}/edit", :method => :get %></li>
-<li><%= link_to "List of Jobs You Have Applied: ", jobapplications_path %></li>
+<li><%= link_to "List of Jobs You Have Applied", jobapplications_path %></li>
 <li><%= link_to "Recommended Jobs ", recommed_path ,:method=>:get %></li>
 <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-  </div>
+</ul>
+</div>
 </div>
 </body>
 </html>
