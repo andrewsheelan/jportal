@@ -1,47 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
-
 <div id="wrap">
   <div id="header">
       <h1>
         <%= @user.name %>
       </h1>
-</div>
-  <div id="sidebar">
+  </div>
+    <div id="sidebar">
 
-  <table>
-  <tr>
-    <td>
-      <strong>Name</strong> <%= @user.name %><br />
+    <table>
+    <tr>
+      <td>
+        <strong>Name</strong> <%= @user.name %><br />
 
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Phone No.:</strong> <%= @user.phone_no %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Skills:</strong> <%= @user.skills %>
-    </td>
-  </tr>
-</table>
-<br/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Phone No.:</strong> <%= @user.phone_no %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Skills:</strong> <%= @user.skills %>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  </div>
 </div>
-<div id="nav">
-<ul>
-<li><%= link_to "Search For Jobs", searchForm_path, :method => :get %></li>
-<li><%= link_to "Edit Profile", "/users/#{@user.id}/edit", :method => :get %></li>
-<li><%= link_to "List of Jobs You Have Applied", jobapplications_path %></li>
-<li><%= link_to "Recommended Jobs ", recommed_path ,:method=>:get %></li>
-<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-</ul>
-</div>
-</div>
-</body>
-</html>

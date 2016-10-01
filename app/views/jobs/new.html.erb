@@ -8,48 +8,22 @@
   <div id="header">
 <h1>Post a Job</h1>
 </div>
-<%= form_for(@job) do |f| %>
-    <%= render 'shared/error_messages', :object => f.object %>
-    <div class="field">
-      <%= f.label :job_ID %><br />
-      <%= f.text_field :job_ID %>
-    </div>
-    <div class="field">
-      <%= f.label :emp_name %><br />
-      <%= f.text_field :emp_name %>
-    </div>
-    <div class="field">
-      <%= f.label :title %><br />
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :description %><br />
-      <%= f.text_area :description %>
-    </div>
-    <div class="field">
-      <%= f.label :tags %>(eg: Intern, Full Time)<br />
-      <%= f.text_field :tags %>
-    </div>
-    <div class="field">
-      <%= f.label :deadline %> (YYYY-MM-DD)<br />
-      <%= f.text_field :deadline %>
-    </div>
-    <div class="field">
-      <%= f.label :category %><br />
-      <%= f.text_field :category %>
-    </div>
-    <div class="field">
-      <%= f.label :public %>(eg: 1 for Public and 0 for Private)<br />
-      <%= f.text_field :public %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Post a Job" %>
-    </div>
+<%= simple_form_for(@job) do |f| %>
+      <%= f.input :job_ID %>
+      <%= f.input :emp_name %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :tags, label: 'Tags (eg: Intern, Full Time)' %>
+      <%= f.input :deadline, label: 'deadline (YYYY-MM-DD)' %>
+      <%= f.input :category, collection: Category.pluck(:category) %>
+      <%= f.input :public, label: 'public (eg: 1 for Public and 0 for Private)' %>
+      <%= f.button :submit, "Post a Job" %>
 <% end %>
+<br/>
+
 <div id = "nav">
 <br/>
 <li><%= link_to "Back To Home Page", session[:employer], :method => :get %></li>
-<br/>
 <li><%= link_to "View Available Categories", categories_path, :method => :get %></li>
 </div>
 </div>

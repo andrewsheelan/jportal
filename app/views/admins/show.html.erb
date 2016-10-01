@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
 
 <div id="wrap">
   <div id="header">
@@ -13,16 +7,7 @@
 
 <div id="sidebar"
   Email id:<%=@admin.email  %><br/>
-<ul>
-  <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-  <li><%= link_to "Edit password", edit_admin_path %></li>
-  <li><%= link_to "Add Admin", new_admin_path %></li>
-  <li><%= link_to "Add Category", new_category_path %></li>
-  <li><%= link_to "Add Employer", new_employer_path %></li>
-  <li><%= link_to "List Employer", employers_path %></li>
-</ul>
+
   </div>
 
 </div>
-</body>
-</html>

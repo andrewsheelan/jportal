@@ -1,57 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
 
 <div id="wrap">
   <div id="header">
-<h1>Edit Your Profile Information</h1></div>
-<div id="sidebar">
-<%= form_for(@user) do |f| %>
-    <%= render 'shared/error_messages', :object => f.object %>
-    <div>
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
+    <h1>Edit Your Profile Information</h1></div>
+    <div id="sidebar">
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :phone_no %>
+      <%= f.input :skills %>
+      <%= f.input :resume %>
+      <%= f.input :coverLetter %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
+      <%= f.button :submit %>
+    <% end %>
     </div>
-    <div>
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label :phone_no %><br />
-      <%= f.text_field :phone_no %>
-    </div>
-    <div class="field">
-      <%= f.label :skills %><br />
-      <%= f.text_field :skills %>
-    </div>
-    <div class="field">
-      <%= f.label :resume %><br />
-      <%= f.text_area :resume %>
-    </div>
-    <div class="field">
-      <%= f.label :coverLetter%><br />
-      <%= f.text_area :coverLetter %>
-    </div>
-    <div>
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </div>
-    <div>
-      <%= f.label :password_confirmation, "Confirmation" %><br />
-      <%= f.password_field :password_confirmation %>
-    </div>
-    <div>
-      <%= f.submit "Submit" %>
-    </div>
-<% end %>
+    </br>
+    <div id="nav">
+    <li><%= link_to "Back To Home Page", session[:userHP], :method => :get %></li>
+  </div>
 </div>
-</br>
-<div id="nav">
-<li><%= link_to "Back To Home Page", session[:userHP], :method => :get %></li>
-</div>
-    </div>
-</body>
-</html>

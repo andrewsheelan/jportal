@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
+
 <div id="wrap">
 
-<%= form_tag({:controller => 'jobs', :action => 'search'}, {:method => 'get'})  do |s| %>
-    <%= text_field_tag :keyword, params[:keyword] %>
+<%= bootstrap_form_tag({:controller => 'jobs', :action => 'search', :method => 'get'})  do |f| %>
+    <%= f.text_field :keyword, value: params[:keyword], style: '', placeholder: 'Type Here...' %>
     <br/>
-    <%= check_box_tag(:one) %>
-    <%= label_tag(:one,"Employee") %>
-    <%= check_box_tag(:two) %>
-    <%= label_tag(:two,"Job Title") %>
-    <%= check_box_tag(:three) %>
-    <%= label_tag(:three,"Job Tags") %>
+    <%= f.check_box(:one, label: "Employee") %>
+    <%= f.check_box(:two, label: "Job Title") %>
+    <%= f.check_box(:three, label: "Job Tags") %>
 
-    <%= submit_tag "Search" %>
+    <%= f.submit "Search" %>
 <% end %>
 
 
@@ -25,5 +17,3 @@
 <li><%= link_to "Back To Home Page", session[:userHP], :method => :get %></li>
     </div>
     </div>
-</body>
-</html>

@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
+
 <div id="wrap">
-<% @job.each do |r| %>
-    <table>
-      <tr>
-        <td><strong>Company Name : </strong><%= r.emp_name %></td></tr>
-      <tr> <td><strong>Job Title : </strong><%= r.title%></td></tr>
 
-      <tr> <td><strong>Job ID : </strong><%= r.job_ID%></td>
-      </tr>
-    </table>
+  <%= table_for @job, class: 'table' do |t| %>
+    <% t.column :emp_name, 'Company Name' %>
+    <% t.column :title, 'Job Title' %>
+    <% t.column :job_ID, 'Job ID' %>
+  <% end %>
 
-    <br/>
+<br/>
 
-<% end%>
   <div id="nav">
 <li><%= link_to "SignIn to Apply!!!", new_session_path, :method => :get %></li>
       </div>
     </div>
-</body>
-</html>

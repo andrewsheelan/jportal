@@ -1,0 +1,45 @@
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to "The Job Portal", "#", class: "navbar-brand" %>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <% admin_user = Admin.find_by email: session[:adminEmail] %>
+          <% if admin_user %>
+            <li><%= link_to "Add Admin", new_admin_path %></li>
+            <li><%= link_to "Add Category", new_category_path %></li>
+            <li><%= link_to "Add Employer", new_employer_path %></li>
+            <li><%= link_to "List Employer", employers_path %></li>
+            <li><%= link_to "Edit password", edit_admin_path(admin_user) %></li>
+            <li><%= link_to "Sign out", signout_path(admin_user), :method => :delete %></li>
+          <% end %>
+
+          <% employer_user = Employer.find_by email: session[:employerEmail] %>
+          <% if employer_user %>
+            <li><%= link_to "Post Jobs", new_job_path, :method => :get %></li>
+            <li><%= link_to "View Jobs", jobs_path, :method => :get %></li>
+            <li><%= link_to "View Job Applications", viewJobApplicants_path, :method => :get %></li>
+            <li><%= link_to "View Categories", categories_path, :method => :get %></li>
+            <li><%= link_to "Change Password", edit_employer_path(employer_user), :method => :get %></li>
+            <li><%= link_to "Sign out", signout_path(employer_user), :method => :delete %></li>
+          <% end %>
+
+          <% @user = User.find_by email: session[:userEmail] %>
+          <% if @user %>
+            <li><%= link_to "Search For Jobs", searchForm_path, :method => :get %></li>
+            <li><%= link_to "Edit Profile", "/users/#{@user.id}/edit", :method => :get %></li>
+            <li><%= link_to "List of Jobs You Have Applied", jobapplications_path %></li>
+            <li><%= link_to "Recommended Jobs ", recommed_path ,:method=>:get %></li>
+            <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+          <% end %>
+        </ul>
+      </div>
+  </nav>

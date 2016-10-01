@@ -12,7 +12,7 @@ class AdminSessionsController < ApplicationController
       #render 'new'
       redirect_to '/admin/signin'
     else
-
+      session[:adminEmail] = admin.email
       sign_in admin
       redirect_to admin
     end

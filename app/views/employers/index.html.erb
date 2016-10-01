@@ -9,18 +9,15 @@
 <h1>All Jobs Posted</h1>
 </div>
 
-<ul class="users">
-  <% @employer.each do |emp| %>
-      <br/>
-      <li>
-        <Strong>Employer : </Strong><%= emp.emp_name%>
-        </br>
-        <br/>
-        <%= link_to "Delete This Employer", emp, :method => :delete, :confirm => "You sure?",
-                    :title => "Delete #{emp.emp_name}" %>
-      </li>
+<%= table_for @employer, class: 'table' do |t| %>
+  <% t.column :emp_name, 'Employer' %>
+  <% t.column '' do |emp|%>
+    <%= link_to "Delete", emp, :method => :delete, :confirm => "You sure?",
+                :title => "Delete #{emp.emp_name}" %>
   <% end %>
-</ul>
+
+<% end %>
+
 <div id="nav">
 <li><%= link_to "Admin Home Page", session[:admin], :method => :get %></li>
 </div>

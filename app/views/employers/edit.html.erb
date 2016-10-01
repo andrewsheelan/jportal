@@ -1,33 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
+
 <div id="wrap">
   <div id="header">
-<h1>Edit Password for Employer</h1>
-</div>
-  <div id="sidebar">
-<%= form_for(@employer) do |f| %>
-    <%= render 'shared/error_messages', :object => f.object %>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
+    <h1>Edit Password for Employer</h1>
+  </div>
+    <div id="sidebar">
+    <%= simple_form_for(@employer) do |f| %>
+          <%= f.input :password %>
+          <%= f.input :password_confirmation %>
+          <%= f.button :submit, "Update Password" %>
+    <% end %>
     </div>
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Update Password" %>
-    </div>
-<% end %>
-</div>
-<br/>
+  <br/>
   <div id="nav">
-<li><%= link_to "Back To Home Page", session[:employer], :method => :get %></li>
+    <li><%= link_to "Back To Home Page", session[:employer], :method => :get %></li>
+  </div>
 </div>
-    </div>
-</body>
-</html>

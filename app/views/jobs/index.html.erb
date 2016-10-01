@@ -1,37 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
+
 <div id="wrap">
   <div id="header">
 <h1>All Jobs Posted</h1>
     </div>
 <div id="sidebar">
 
-<ul class="users">
-  <% @jobs.each do |job| %>
-      <br/>
-      <li>
-        <Strong>Company : </Strong><%= job.emp_name%>
-        </br>
-        <Strong>Job ID : </Strong><%= job.job_ID%>
-        </br>
-        <Strong>Title : </Strong><%= job.title%>
-        </br>
-        <Strong>Deadline : </Strong><%= job.deadline%>
-        <br/>
-        <%= link_to "Edit Jobs", "/jobs/#{job.id}/edit", :method => :get %>
-        <%= link_to "Delete This Job", job, :method => :delete, :confirm => "You sure?",
-                    :title => "Delete #{job.job_ID} of #{job.emp_name}" %>
-      </li>
+
+  <%= table_for @jobs, class: 'table' do |t| %>
+    <% t.column :emp_name, 'Company' %>
+    <% t.column :job_ID, 'Job ID' %>
+    <% t.column :title, 'Title' %>
+    <% t.column :deadline, 'Deadline' %>
+    <% t.column :actions do |job| %>
+      <%= link_to "Edit", "/jobs/#{job.id}/edit", :method => :get %> |
+      <%= link_to "Delete", job, :method => :delete, :confirm => "You sure?",
+                  :title => "Delete #{job.job_ID} of #{job.emp_name}" %>
+    <% end %>
   <% end %>
-</ul>
+
   </div>
+  <br/>
 <div id="nav">
 <li><%= link_to "Back Home Page", session[:employer], :method => :get %></li>
 </div>
     </div>
-</body>
-</html>

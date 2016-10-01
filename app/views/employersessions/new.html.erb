@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
 
 <div id="wrap">
   <div id="header">
-<h1>Sign in For Employer</h1></div>
+  <h1>Sign in For Employer</h1></div>
 
-<%= form_for(:employersession, :url => employersessions_path) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Sign in" %>
-    </div>
-<% end %>
+  <%= bootstrap_form_for(:employersession, :url => employersessions_path) do |f| %>
+        <%= f.text_field :email %>
+        <%= f.password_field :password %>
+        <%= f.submit "Sign in" %>
+  <% end %>
 </div>
-</body>
-</html>

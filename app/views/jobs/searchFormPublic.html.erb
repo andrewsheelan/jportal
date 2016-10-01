@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
+
 <div id="wrap">
 <%= form_tag({:controller => 'jobs', :action => 'searchPublic'}, {:method => 'get'})  do |s| %>
+    <%= label_tag(:keyword,"Search") %>
     <%= text_field_tag :keyword, params[:keyword] %>
     <br/>
     <%= check_box_tag(:one) %>
@@ -24,5 +20,3 @@
 <li><%= link_to "Home Page", root_path, :method => :get %></li>
       </div>
     </div>
-</body>
-</html>

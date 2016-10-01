@@ -1,39 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
 <div id="wrap">
   <div id="header">
-<h1>Add new Admin</h1></div>
-<div id="sidebar">
-<%= form_for(@admin) do |f| %>
-    <%= render 'shared/error_messages', :object => f.object %>
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
+    <h1>Add new Admin</h1></div>
+    <div id="sidebar">
+    <%= simple_form_for(@admin) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
+      <%= f.button :submit, "Sign up" %>
+    <% end %>
     </div>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </div>
-    <div class="field">
-      <%= f.label :password_confirmation, "Confirmation" %><br />
-      <%= f.password_field :password_confirmation %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-<% end %>
+    <br/>
+    <div id="nav">
+    <li>
+      <%= link_to "Admin Home Page", :back, method: :get %>
+    </li>
+  </div>
 </div>
-<div id="nav">
-<li><%= link_to "Admin Home Page", :back, method: :get %></li></div>
-    </div>
-
-</body>
-</html>

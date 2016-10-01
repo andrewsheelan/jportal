@@ -1,32 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
+
 <div id="wrap">
   <div id="header">
-<h1>All Jobs Applications Recieved For Your Company</h1>
+    <h1>All Jobs Applications Recieved For Your Company</h1>
   </div>
 
-<ul class="users">
-  <% @jobapplications.each do |jobapplication| %>
-      <li>
-        <strong>Company :</strong><%= jobapplication.emp_name%>
-        </br>
-        <strong>Job ID :</strong><%= jobapplication.job_ID%>
-        </br>
-        <strong>Job Seeker :</strong><%= jobapplication.email%>
-        </br>
-        <strong>Status :</strong><%= jobapplication.status%>
-        </li>
-        <%= link_to "Edit Status", "/jobapplications/#{jobapplication.id}/edit", :method => :get %>
+  <%= table_for @jobapplications, class: 'table' do |t| %>
+    <% t.column :emp_name, 'Company' %>
+    <% t.column :job_ID, 'Job ID' %>
+    <% t.column :email, 'Job Seeker' %>
+    <% t.column :status, 'Status' %>
+    <% t.column :actions do |jobapplication| %>
+      <%= link_to "Edit Status", "/jobapplications/#{jobapplication.id}/edit", :method => :get %>
+    <% end %>
   <% end %>
-</ul>
 
-<br/>
-    <div id="nav">
-<li><%= link_to "Back To Home Page", session[:employer], :method => :get %></li>
-    </div></div>
-</body>
-</html>
+  <br/>
+  <div id="nav">
+    <li><%= link_to "Back To Home Page", session[:employer], :method => :get %></li>
+  </div>
+</div>
