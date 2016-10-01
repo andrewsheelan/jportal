@@ -1,5 +1,6 @@
 class UpdateToJobs < ActiveRecord::Migration
   def change
+    drop_table :jobs
     create_table :jobs do |t|
       t.string :job_ID
       t.string :emp_name
